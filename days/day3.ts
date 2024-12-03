@@ -22,14 +22,13 @@ const totalFinder = (input: string) => {
 console.log(totalFinder(input));
 
 /* PART 2 */
-const regex = /(((do\(\)).*?don't\(\))|do\(\).*|^.*?don't\(\))/g;
-let filteredInput = input.replace(/(\r\n|\n|\r)/gm, "")
-let res = regex.exec(filteredInput);
+const regex = /(((do\(\)).*?don't\(\))|do\(\).*|^.*?don't\(\))/gs;
+let res = regex.exec(input);
 
 let total = 0;
 while (res) {
     total += totalFinder(res[0]);
-    res = regex.exec(filteredInput);
+    res = regex.exec(input);
 }
 
 console.log(total);
