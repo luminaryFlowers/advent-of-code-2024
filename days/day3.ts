@@ -4,14 +4,13 @@ const input: string = readFileSync('./days/day3input.txt', 'utf-8');
 
 /* PART 1 */
 const totalFinder = (input: string) => {
-    const regex = /(mul\([0-9]+,[0-9]+\))/g;
+    const regex = /mul\(([0-9]+),([0-9]+)\)/g;
     let res = regex.exec(input);
 
     let total = 0;
     while (res) {
         if (res) {
-            let test = res[0].split(',');
-            total += parseInt(test[0].slice(4), 10) * parseInt(test[1], 10);
+            total += parseInt(res[1]) * parseInt(res[2]);
         }
         res = regex.exec(input);
     }
