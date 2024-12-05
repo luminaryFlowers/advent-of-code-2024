@@ -24,7 +24,7 @@ const isSafe = (report: number[]) => {
     }
 
     return !broken;
-}
+};
 
 for (const line of lines) {
     const reportString: string[] = line.split(" ");
@@ -45,7 +45,7 @@ const signFinder = (report: number[]) => {
         holder += report[i] - report[i - 1];
     }
     return Math.sign(holder);
-}
+};
 
 const brokenIndex = (report: number[], signer) => {
     // makes all lists ascending
@@ -60,7 +60,7 @@ const brokenIndex = (report: number[], signer) => {
     }
 
     return -1;
-}
+};
 
 for (const line of lines) {
     const reportString: string[] = line.split(" ");

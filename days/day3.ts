@@ -16,7 +16,7 @@ const totalFinder = (input: string) => {
     }
 
     return total;
-}
+};
 
 console.log(totalFinder(input));
 
